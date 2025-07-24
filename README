@@ -4,98 +4,37 @@
 
 **Terminal Time Machine** records your entire terminal session and replays it later like watching a movie. Perfect for debugging, learning, sharing workflows, or reviewing what you accomplished.
 
+---
+
 ## ✨ Features
 
-- 🎬 **Pixel-perfect playback** - Every character appears exactly when you typed it
-- ⚡ **Speed control** - Watch at 0.1x for analysis or 10x for quick reviews  
-- 📊 **Session insights** - Duration, command count, and metrics
-- 🚀 **Zero overhead** - Lightweight recording
+- 🎬 **Pixel-perfect playback** — Every character appears exactly when you typed it  
+- ⚡ **Speed control** — Watch at 0.1x for detailed analysis or 10x for quick review  
+- 📊 **Session insights** — Duration, command count, and detailed metrics  
+- 🚀 **Zero overhead** — Lightweight and efficient recording with minimal impact  
+
+---
+
+## 🎬 See it in Action
+
+![Terminal Time Machine demo](demo.gif)
+
+*Watch a real debugging session recorded and played back with Terminal Time Machine*
+
+---
 
 ## 🚀 Quick Start
 
 ```bash
-# Install
+# Clone and build
 git clone https://github.com/yourusername/terminal-time-machine
 cd terminal-time-machine
 cargo build --release
 
-# Record your session
+# Record your terminal session
 cargo run --bin record
-# (Do your work...)
-# Press Ctrl+C when done
+# (Do your work in the terminal...)
+# Press Ctrl+C when done recording
 
-# Watch it back!
+# Replay the session
 cargo run --bin play
-```
-
-## 🎪 Demo: Debugging Session
-
-```bash
-# 🎬 Recording...
-$ cargo run --bin record
-jan@laptop:~$ cd my-project/
-jan@laptop:~/my-project$ cargo test auth
-test auth::test_login_flow ... FAILED
-
-jan@laptop:~/my-project$ vim src/auth.rs
-# (fix the bug...)
-jan@laptop:~/my-project$ cargo test auth  
-test auth::test_login_flow ... ok ✅
-
-jan@laptop:~/my-project$ git commit -m "Fix auth bug"
-^C
-
-# 🎞️ Playback
-$ cargo run --bin play
-
-🎞️  Terminal Time Machine Player
-📊 Session Information:
-├─ Duration: 8.4 minutes
-├─ Total events: 1,247
-└─ Commands executed: 12
-
-🎬 Starting playback... (watch your debugging unfold!)
-```
-
-## 🎛️ Playback Options
-
-```bash
-# Speed control
-cargo run --bin play -- --speed 2.0     # 2x speed
-cargo run --bin play -- --speed 0.5     # Slow motion
-cargo run --bin play -- --speed 10.0    # Quick overview
-
-# Show typing
-cargo run --bin play -- --show-input
-
-# Session info only
-cargo run --bin play -- --info
-
-# Specific file
-cargo run --bin play -- --file debug-session.jsonl
-```
-
-## 🎯 Perfect for...
-
-- **🐛 Debugging** - "What exactly did I do before this broke?"
-- **📚 Learning** - Share your exact workflow with teammates  
-- **📝 Documentation** - Create step-by-step tutorials
-- **📊 Analysis** - Review and optimize your command patterns
-- **🎬 Code reviews** - Show the full context of your solution
-
-## ⚙️ Requirements
-
-- Rust 1.70+
-- Unix-like system (Linux, macOS, WSL)
-
-## 🤝 Contributing
-
-Bug reports, features, and PRs welcome! Open an issue or submit a pull request.
-
-## 📜 License
-
-MIT License
-
----
-
-*"The best way to understand what happened is to watch it happen again."* 🕰️✨
